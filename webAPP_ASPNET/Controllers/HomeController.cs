@@ -5,7 +5,6 @@ using YourNamespace.Filters;
 
 namespace webAPP_ASPNET.Controllers
 {
-    [TokenAuthorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

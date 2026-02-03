@@ -56,14 +56,14 @@ namespace webAPP_ASPNET
 
             app.UseSession();
             app.UseRouting();
-
+            app.UseAuthentication(); // 👈 adiciona
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Login}/{action=Index}/{id?}"
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
         }

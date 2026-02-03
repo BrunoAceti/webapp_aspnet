@@ -40,6 +40,7 @@ public class ButtonAuthorize : ActionFilterAttribute
                 return;
             }
         }
+
         await next();
     }
 
