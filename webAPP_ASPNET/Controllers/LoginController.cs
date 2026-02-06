@@ -26,7 +26,7 @@ namespace webAPP_ASPNET.Controllers
         {
             var loginModel = new { Username = username, Password = password };
             var jsonContent = new StringContent(JsonConvert.SerializeObject(loginModel), Encoding.UTF8, "application/json");
-            HttpContext.Session.SetString("BaseSelecionada", Data.AppContext.ApiBaseURL);
+            HttpContext.Session.SetString("BaseSelecionada", Data.ApiSettings.ApiBaseURL);
 
             string baseUrl = HttpContext.Session.GetString("BaseSelecionada");
             if (string.IsNullOrEmpty(baseUrl))
@@ -87,6 +87,48 @@ namespace webAPP_ASPNET.Controllers
         {
             Response.Cookies.Delete("AuthCookie");
             return RedirectToAction("Index", "Login");
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(string fullname, string email, string username, string password)
+        {
+            HttpContext.Session.SetString("BaseSelecionada", Data.ApiSettings.ApiBaseURL);
+
+            var registerModel = new
+            {
+                FULLNAME = fullname,
+                EMAIL = email,
+                USERNAME = username,
+                PASSWORD = password
+            };
+
+            var json = new StringContent(
+                JsonConvert.SerializeObject(registerModel),
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            string baseUrl = HttpContext.Session.GetString("BaseSelecionada");
+
+            _httpClient.BaseAddress = new Uri(baseUrl);
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json")
+            );
+
+            var response = await _httpClient.PostAsync("User/register", json);
+
+            if (response.IsSuccessStatusCode)
+                return RedirectToAction("Index");
+
+            ModelState.AddModelError("", "Erro ao criar conta");
+            return View();
         }
     }
 }

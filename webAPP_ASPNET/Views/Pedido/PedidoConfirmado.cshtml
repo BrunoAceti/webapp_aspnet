@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Pedido Confirmado";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="text-success fw-bold">Pedido confirmado 🎉</h1>
+
+    <p class="mt-3">
+        Seu pedido <strong>#@ViewBag.PedidoId</strong> foi realizado com sucesso.
+    </p>
+
+    <a asp-controller="Home"
+       asp-action="Index"
+       class="btn btn-primary mt-4">
+        Voltar para a loja
+    </a>
+</div>

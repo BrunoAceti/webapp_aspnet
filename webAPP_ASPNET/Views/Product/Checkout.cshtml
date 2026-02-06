@@ -1,0 +1,166 @@
+﻿@model List<webAPP_ASPNET.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Finalizar Compra";
+    Layout = "_Layout";
+
+    decimal total = Model.Sum(i => i.Price * i.Quantity);
+}
+
+<form asp-controller="Cart"
+      asp-action="FinalizarCompra"
+      method="post">
+
+    <div class="container my-5">
+
+        <!-- Título -->
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Finalizar Compra</h1>
+            <p class="text-muted">Preencha os dados abaixo para concluir seu pedido</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Dados do cliente -->
+            <div class="col-lg-8">
+
+                <!-- Dados pessoais -->
+                <div class="card shadow-sm border-0 rounded-4 mb-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-person-check me-2"></i> Dados do Cliente
+                        </h5>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nome completo</label>
+                                <input type="text"
+                                       name="NomeCliente"
+                                       class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">E-mail</label>
+                                <input type="email"
+                                       name="EmailCliente"
+                                       class="form-control"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Endereço -->
+                <div class="card shadow-sm border-0 rounded-4 mb-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-geo-alt me-2"></i> Endereço de Entrega
+                        </h5>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label">CEP</label>
+                                <input type="text"
+                                       name="Cep"
+                                       class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="col-md-8">
+                                <label class="form-label">Rua</label>
+                                <input type="text"
+                                       name="Rua"
+                                       class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Número</label>
+                                <input type="text"
+                                       name="Numero"
+                                       class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="col-md-8">
+                                <label class="form-label">Complemento</label>
+                                <input type="text"
+                                       name="Complemento"
+                                       class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagamento -->
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-credit-card me-2"></i> Pagamento
+                        </h5>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="FormaPagamento"
+                                   value="Cartão de Crédito"
+                                   checked>
+                            <label class="form-check-label">
+                                Cartão de Crédito
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="FormaPagamento"
+                                   value="PIX">
+                            <label class="form-check-label">
+                                PIX
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Resumo -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body">
+
+                        <h4 class="fw-bold mb-4">Resumo do Pedido</h4>
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>@item.Name x @item.Quantity</span>
+                                <span>R$ @(item.Price* item.Quantity).ToString("N2")</span>
+                            </div>
+                        }
+
+                        <hr />
+
+                        <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
+                            <span>Total</span>
+                            <span>R$ @total.ToString("N2")</span>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success w-100 py-3 rounded-pill fw-semibold">
+                            <i class="bi bi-lock-fill me-2"></i> Confirmar Pedido
+                        </button>
+
+                        <p class="text-muted text-center mt-3 small">
+                            <i class="bi bi-shield-lock me-1"></i> Compra 100% segura
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</form>

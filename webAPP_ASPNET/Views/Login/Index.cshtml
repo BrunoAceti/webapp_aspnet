@@ -84,7 +84,6 @@
 
         <!-- HEADER -->
         <div class="login-header">
-            <img src="~/resources/cube_32x32.png" alt="SANTA">
             <h1>SANTA</h1>
         </div>
 
@@ -110,9 +109,18 @@
                            required>
                 </div>
 
-                <button type="submit" class="btn btn-login text-white w-100">
+                <button type="submit" class="btn btn-login text-white w-100 mb-3">
                     Entrar
                 </button>
+
+                <div class="text-center">
+                    <span class="text-muted">Ainda não tem conta?</span><br />
+                    <a asp-controller="Login"
+                       asp-action="Register"
+                       class="fw-semibold text-decoration-none">
+                        Cadastre-se
+                    </a>
+                </div>
 
             </form>
         </div>

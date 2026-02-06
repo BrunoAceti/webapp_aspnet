@@ -141,3 +141,10 @@ body {
         height: 180px;
     }
 }
+
+@media (min-width: 992px) {
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}

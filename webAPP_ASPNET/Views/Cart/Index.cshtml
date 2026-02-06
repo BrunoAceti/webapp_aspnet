@@ -128,9 +128,11 @@
                             <span>R$ @total.ToString("N2")</span>
                         </div>
 
-                        <button class="btn btn-dark w-100 py-3 rounded-pill fw-semibold">
+                        <a asp-controller="Cart"
+                           asp-action="Checkout"
+                           class="btn btn-dark w-100 py-3 rounded-pill fw-semibold">
                             <i class="bi bi-credit-card me-2"></i> Finalizar Compra
-                        </button>
+                        </a>
 
                     </div>
                 </div>

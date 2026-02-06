@@ -1,0 +1,109 @@
+﻿@model List<webAPP_ASPNET.DTOs.PedidoViewDto>
+
+@{
+    ViewData["Title"] = "Meus Pedidos";
+    Layout = "_Layout";
+}
+
+<div class="container my-5">
+
+    <!-- Título da página -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Meus Pedidos</h1>
+        <p class="text-muted">Confira o histórico e detalhes dos seus pedidos</p>
+    </div>
+
+    <!-- Grid de pedidos -->
+    <div class="row justify-content-center">
+        @foreach (var pedido in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 position-relative">
+
+                    <!-- Badge de status -->
+                    <span class="position-absolute top-0 end-0 m-3 badge bg-primary rounded-pill px-3 py-2">
+                        @pedido.Status
+                    </span>
+
+                    <!-- Card body -->
+                    <div class="card-body d-flex flex-column">
+
+                        <!-- Cabeçalho -->
+                        <h5 class="card-title fw-bold mb-2">Pedido #@pedido.PedidoId</h5>
+                        <p class="text-muted mb-3">
+                            Data: @pedido.DataPedido.ToString("dd/MM/yyyy")
+                        </p>
+
+                        <!-- Total -->
+                        <div class="mb-3">
+                            <span class="fs-5 fw-semibold text-dark">Total: </span>
+                            <span class="fs-5 text-success">R$ @pedido.Total.ToString("N2")</span>
+                        </div>
+
+                        <!-- Botão ver detalhes -->
+                        <button class="btn btn-dark mt-auto rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalPedido_@pedido.PedidoId">
+                            <i class="bi bi-eye me-2"></i>Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Detalhes Pedido -->
+            <div class="modal fade"
+                 id="modalPedido_@pedido.PedidoId"
+                 tabindex="-1"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content border-0 rounded-4 shadow-lg">
+
+                        <!-- Cabeçalho do modal -->
+                        <div class="modal-header border-0">
+                            <h5 class="modal-title fw-bold">Pedido #@pedido.PedidoId</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Corpo do modal -->
+                        <div class="modal-body">
+                            <p class="text-muted mb-2"><strong>Data:</strong> @pedido.DataPedido.ToString("dd/MM/yyyy")</p>
+                            <p class="text-muted mb-2"><strong>Status:</strong> @pedido.Status</p>
+                            <p class="text-muted mb-4"><strong>Total:</strong> R$ @pedido.Total.ToString("N2")</p>
+
+                            <!-- Aqui você pode adicionar uma lista de itens, se quiser depois -->
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Preço Unitário</th>
+                                            <th>Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @* Exemplo: se adicionar itens no DTO depois *@
+                                        @*foreach (var item in pedido.Itens) { 
+                                            <tr>
+                                                <td>@item.NomeProduto</td>
+                                                <td>@item.Quantidade</td>
+                                                <td>R$ @item.PrecoUnitario.ToString("N2")</td>
+                                                <td>R$ @item.SubTotal.ToString("N2")</td>
+                                            </tr>
+                                        }*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Rodapé do modal -->
+                        <div class="modal-footer border-0">
+                            <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

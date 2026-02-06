@@ -71,47 +71,69 @@
                  tabindex="-1"
                  aria-hidden="true">
 
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content border-0 rounded-4 overflow-hidden shadow">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
 
                         <div class="row g-0">
 
-                            <!-- IMAGEM -->
-                            <div class="col-lg-6 bg-light d-flex align-items-center justify-content-center p-4">
+                            <!-- COLUNA IMAGEM -->
+                            <div class="col-lg-6 bg-light d-flex align-items-center justify-content-center position-relative">
+
+                                <span class="position-absolute top-0 start-0 m-4 badge bg-dark rounded-pill px-3 py-2">
+                                    NOVO
+                                </span>
+
                                 <img src="@product.Image"
-                                     class="img-fluid rounded-3"
+                                     class="img-fluid p-5"
+                                     style="max-height: 520px; object-fit: contain;"
                                      alt="@product.Name">
                             </div>
 
-                            <!-- INFO -->
+                            <!-- COLUNA INFO -->
                             <div class="col-lg-6 p-5">
 
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h2 class="fw-bold mb-0">@product.Name</h2>
+                                <!-- HEADER -->
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <h2 class="fw-bold mb-1">@product.Name</h2>
+                                        <span class="text-muted small">Código: @product.ProductId</span>
+                                    </div>
                                     <button class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
 
-                                <p class="fs-3 fw-semibold mb-2">
-                                    R$ @product.Price.ToString("N2")
-                                </p>
-
-                                <p class="text-muted">
-                                    Produto premium com design exclusivo,
-                                    materiais de alta qualidade e máximo conforto.
-                                </p>
-
-                                <div class="mt-4">
-                                    <label class="fw-semibold mb-2">Tamanho</label>
-                                    <select class="form-select form-select-lg rounded-pill">
-                                        <option disabled selected>Selecione</option>
-                                        <option>38</option>
-                                        <option>39</option>
-                                        <option>40</option>
-                                        <option>41</option>
-                                        <option>42</option>
-                                    </select>
+                                <!-- PREÇO -->
+                                <div class="mb-4">
+                                    <span class="fs-2 fw-bold text-dark">
+                                        R$ @product.Price.ToString("N2")
+                                    </span>
+                                    <div class="text-success small mt-1">
+                                        <i class="bi bi-check-circle me-1"></i> Em estoque
+                                    </div>
                                 </div>
 
+                                <!-- DESCRIÇÃO -->
+                                <p class="text-muted lh-lg">
+                                    Sneaker premium com design exclusivo, materiais de alta qualidade
+                                    e conforto superior para o dia a dia.
+                                    Ideal para quem busca estilo e performance.
+                                </p>
+
+                                <!-- TAMANHOS -->
+                                <div class="mt-4">
+                                    <label class="fw-semibold mb-2 d-block">Selecione o tamanho</label>
+
+                                    <div class="d-flex gap-2 flex-wrap">
+                                        @foreach (var size in new[] { "38", "39", "40", "41", "42" })
+                                        {
+                                            <button type="button"
+                                                    class="btn btn-outline-dark rounded-pill px-4">
+                                                @size
+                                            </button>
+                                        }
+                                    </div>
+                                </div>
+
+                                <!-- CTA -->
                                 <form asp-controller="Cart"
                                       asp-action="AddToCart"
                                       method="post"
@@ -122,11 +144,18 @@
                                     <input type="hidden" name="price" value="@product.Price" />
                                     <input type="hidden" name="image" value="@product.Image" />
 
-                                    <button class="btn btn-dark w-100 py-3 rounded-pill fw-semibold">
+                                    <button class="btn btn-dark w-100 py-3 rounded-pill fw-semibold fs-5">
                                         <i class="bi bi-bag me-2"></i>
-                                        Adicionar ao Carrinho
+                                        Adicionar ao carrinho
                                     </button>
                                 </form>
+
+                                <!-- INFO EXTRA -->
+                                <div class="mt-4 d-flex gap-4 text-muted small">
+                                    <span><i class="bi bi-truck me-1"></i> Frete rápido</span>
+                                    <span><i class="bi bi-shield-check me-1"></i> Compra segura</span>
+                                    <span><i class="bi bi-arrow-repeat me-1"></i> Troca fácil</span>
+                                </div>
 
                             </div>
                         </div>

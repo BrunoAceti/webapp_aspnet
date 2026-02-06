@@ -1,45 +1,48 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using System.Net.Http.Headers;
+using webAPP_ASPNET.Data;
+using webAPP_ASPNET.Services;
 
 namespace webAPP_ASPNET
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) 
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            // ✅ ESSENCIAL
+            ApiSettings.ApiBaseURL = Configuration["ApiSettings:BaseUrl"];
         }
 
         public IConfiguration Configuration { get; }
 
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddDistributedMemoryCache();
             services.AddSingleton<ITempDataProvider, SessionStateTempDataProvider>();
+
             services.AddSession(options =>
             {
                 options.Cookie.Name = "Session";
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
 
-            Data.AppContext.ApiBaseURL = Configuration.GetConnectionString("DefaultConnection");
+            // HttpClient padrão (LoginController usa)
+            services.AddHttpClient();
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddHttpClient("CustomClient", client =>
+            // HttpClient tipado (PedidoService usa)
+            services.AddHttpClient<PedidoService>(client =>
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.BaseAddress = new Uri(ApiSettings.ApiBaseURL);
             });
 
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
-
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Configure the HTTP request pipeline.
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -47,7 +50,6 @@ namespace webAPP_ASPNET
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -56,7 +58,6 @@ namespace webAPP_ASPNET
 
             app.UseSession();
             app.UseRouting();
-            app.UseAuthentication(); // 👈 adiciona
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

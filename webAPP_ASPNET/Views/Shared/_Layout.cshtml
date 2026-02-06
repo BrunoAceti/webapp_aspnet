@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using webAPP_ASPNET.Models
+@using webAPP_ASPNET.Extensions
+
+@{
+    var cart = Context.Session.GetObject<List<CartItem>>("CART")
+               ?? new List<CartItem>();
+
+    var cartCount = cart.Sum(x => x.Quantity);
+    var isLogged = Context.Request.Cookies["AuthCookie"] != null; // ← aqui, no topo
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,36 +23,53 @@
 
     <style>
 
-        title {
-            color: darkmagenta;
-        }
-
         footer {
             text-align: center;
             background-color: rgba(139, 0, 139, 0.8);
             color: white;
         }
 
+        .dropdown-menu {
+            border-radius: 12px;
+        }
+
+        .dropdown-menu .btn {
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
     <header class="position-fixed top-0 start-0 w-100 bg-white shadow-sm" style="z-index:1030;">
-        <nav class="d-flex align-items-center justify-content-between px-4 py-4">
+        <nav class="d-flex align-items-center px-3 py-3">
 
-            <!-- LOGO -->
-            <a class="logo-santa d-flex align-items-center text-decoration-none text-dark fw-bold"
-               asp-area="" asp-controller="Home" asp-action="Index">
-                SANTA
-            </a>
+            <!-- ESQUERDA (LOGO) -->
+            <div class="d-flex align-items-center flex-grow-1">
+                <a class="logo-santa d-flex align-items-center text-decoration-none text-dark fw-bold"
+                   asp-controller="Home" asp-action="Index">
+                    SANTA
+                </a>
+            </div>
 
-            <!-- MENU CENTRAL -->
-            <div class="d-none d-md-flex align-items-center gap-4">
-                <a asp-controller="Product" asp-action="Index" class="text-dark text-decoration-none fw-medium">
+            <!-- CENTRO (MENU) -->
+            <div class="d-none d-md-flex justify-content-center gap-4">
+                <a asp-controller="Product" asp-action="Index"
+                   class="text-dark text-decoration-none fw-medium">
                     Produtos
                 </a>
-                <a asp-controller="Home" asp-action="Privacy" class="text-dark text-decoration-none fw-medium">
+
+                <a asp-controller="Home" asp-action="Privacy"
+                   class="text-dark text-decoration-none fw-medium">
                     Sobre
                 </a>
+
+                <!-- NOVO: Meus Pedidos -->
+                @if (isLogged)
+                {
+                    <a asp-controller="Pedido" asp-action="MeusPedidos"
+                       class="text-dark text-decoration-none fw-medium">
+                        Meus Pedidos
+                    </a>
+                }
 
                 @if (LoggedUser.Department.ID == 1)
                 {
@@ -59,42 +87,73 @@
                 }
             </div>
 
-            <!-- USUÁRIO -->
-            @{
-                var isLogged = Context.Request.Cookies["AuthCookie"] != null;
-            }
+            <!-- DIREITA (USUÁRIO) -->
+            <div class="d-flex justify-content-end align-items-center flex-grow-1">
 
-            <!-- USUÁRIO -->
-            @if (isLogged)
-            {
-                <div class="dropdown">
-                    <a class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
-                       href="#" role="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-user-circle fs-5 me-2"></i>
-                        <span class="fw-medium">@LoggedUser.User.USERNAME</span>
-                    </a>
+                <!-- CARRINHO -->
+                <a asp-controller="Cart" asp-action="Index"
+                   class="position-relative text-dark text-decoration-none me-3">
+                    <i class="fas fa-shopping-cart fs-5"></i>
 
-                    <ul class="dropdown-menu dropdown-menu-end p-3 shadow-sm" style="min-width: 220px;">
-                        <li class="fw-semibold">@LoggedUser.User.FULLNAME</li>
-                        <li class="small text-muted">@LoggedUser.User.EMAIL</li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item text-danger"
-                               asp-controller="Login" asp-action="Logout">
-                                <i class="fas fa-sign-out-alt me-2"></i> Sair
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            }
-            else
-            {
-                <a asp-controller="Login" asp-action="Index"
-                   class="d-flex align-items-center text-dark text-decoration-none fw-medium">
-                    <i class="fas fa-user-circle fs-5 me-2"></i>
-                    <span>Entrar</span>
+                    @if (cartCount > 0)
+                    {
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            @cartCount
+                        </span>
+                    }
                 </a>
-            }
+
+                @if (isLogged)
+                {
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                           href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle fs-5 me-2"></i>
+                            <span class="fw-medium">@LoggedUser.User.USERNAME</span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end p-3 shadow-sm" style="min-width: 220px;">
+                            <li class="fw-semibold">@LoggedUser.User.FULLNAME</li>
+                            <li class="small text-muted">@LoggedUser.User.EMAIL</li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item text-danger"
+                                   asp-controller="Login" asp-action="Logout">
+                                    <i class="fas fa-sign-out-alt me-2"></i> Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="dropdown">
+                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            <i class="fas fa-user-circle fs-5"></i>
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-end p-3 shadow-sm login-dropdown">
+                            <li class="text-center mb-2">
+                                <span class="fw-semibold">Minha conta</span>
+                            </li>
+
+                            <li class="small text-muted text-center mb-3">
+                                Entre para acessar seus pedidos
+                            </li>
+
+                            <li>
+                                <a asp-controller="Login" asp-action="Index"
+                                   class="btn btn-dark w-100">
+                                    <i class="fas fa-sign-in-alt me-2"></i> Fazer login
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            </div>
 
         </nav>
     </header>
