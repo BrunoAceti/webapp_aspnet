@@ -69,6 +69,11 @@
                        class="text-dark text-decoration-none fw-medium">
                         Meus Pedidos
                     </a>
+
+                    <a asp-controller="Favorite" asp-action="Index"
+                       class="text-dark text-decoration-none fw-medium">
+                        Favoritos
+                    </a>
                 }
 
                 @if (LoggedUser.Department.ID == 1)

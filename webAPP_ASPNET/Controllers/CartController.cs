@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using webAPP_ASPNET.DTOs;
 using webAPP_ASPNET.Extensions;
 using webAPP_ASPNET.Models;
@@ -7,7 +8,6 @@ using YourNamespace.Filters;
 
 namespace webAPP_ASPNET.Controllers
 {
-    [TokenAuthorize]
     public class CartController : Controller
     {
         private const string CART_SESSION_KEY = "CART";
@@ -77,6 +77,7 @@ namespace webAPP_ASPNET.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Checkout()
         {
             var cart = HttpContext.Session.GetObject<List<CartItem>>(CART_SESSION_KEY)
@@ -89,6 +90,7 @@ namespace webAPP_ASPNET.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> FinalizarCompra(PedidoViewModel model)
         {
             var cart = HttpContext.Session.GetObject<List<CartItem>>("CART");

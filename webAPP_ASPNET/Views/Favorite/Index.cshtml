@@ -1,0 +1,48 @@
+﻿@model List<webAPP_ASPNET.Models.FavoriteItem>
+
+@{
+    ViewData["Title"] = "Meus Favoritos";
+    Layout = "_Layout";
+}
+
+<div class="container my-5">
+
+    <h2 class="fw-bold mb-4 text-center">Meus Favoritos</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center">
+            <p class="text-muted">Você ainda não tem favoritos.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm border-0">
+
+                        <img src="@item.Image"
+                             class="card-img-top p-3"
+                             style="height:200px; object-fit:contain;" />
+
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold">@item.Name</h6>
+                            <p class="text-muted">
+                                R$ @item.Price.ToString("N2")
+                            </p>
+
+                            <a asp-action="Remove"
+                               asp-route-id="@item.ProductId"
+                               class="btn btn-outline-danger btn-sm rounded-pill">
+                                Remover
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

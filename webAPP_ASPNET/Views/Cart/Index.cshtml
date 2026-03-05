@@ -1,10 +1,13 @@
-﻿@model List<webAPP_ASPNET.Models.CartItem>
+﻿@using System.Globalization
+
+@model List<webAPP_ASPNET.Models.CartItem>
 
 @{
     ViewData["Title"] = "Carrinho";
     Layout = "_Layout";
 
     decimal total = Model.Sum(item => item.Price * item.Quantity);
+    var br = new CultureInfo("pt-BR");
 }
 
 <div class="container my-5">
@@ -54,7 +57,7 @@
                                 <div class="col-9 col-md-4">
                                     <h5 class="fw-semibold mb-1">@item.Name</h5>
                                     <span class="text-muted">
-                                        R$ @item.Price.ToString("N2")
+                                        @item.Price.ToString("C", br)
                                     </span>
                                 </div>
 
@@ -68,7 +71,7 @@
                                 <div class="col-md-2 text-center mt-3 mt-md-0">
                                     <span class="fw-semibold">Subtotal</span>
                                     <div class="mt-1">
-                                        R$ @(item.Price* item.Quantity).ToString("N2")
+                                        @((item.Price * item.Quantity).ToString("C", br))
                                     </div>
                                 </div>
 
@@ -113,7 +116,7 @@
 
                         <div class="d-flex justify-content-between mb-2">
                             <span>Subtotal</span>
-                            <span>R$ @total.ToString("N2")</span>
+                            <span>@total.ToString("C", br)</span>
                         </div>
 
                         <div class="d-flex justify-content-between mb-2">
@@ -125,7 +128,7 @@
 
                         <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
                             <span>Total</span>
-                            <span>R$ @total.ToString("N2")</span>
+                            <span>@total.ToString("C", br)</span>
                         </div>
 
                         <a asp-controller="Cart"

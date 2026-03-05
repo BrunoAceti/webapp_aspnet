@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using webAPP_ASPNET.DTOs;
 using webAPP_ASPNET.Services;
+using YourNamespace.Filters;
 
 namespace webAPP_ASPNET.Controllers
 {
@@ -37,9 +40,15 @@ namespace webAPP_ASPNET.Controllers
         [HttpGet]
         public async Task<IActionResult> MeusPedidos()
         {
-            var emailCliente = User.Identity.Name; // ou de onde você pega o email do logado
+            var emailCliente = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(emailCliente))
+                return View(new List<PedidoViewDto>());
+
             var client = new HttpClient();
-            var response = await client.GetAsync($"https://localhost:44342/api/pedido/meus-pedidos/{emailCliente}");
+            var response = await client.GetAsync(
+                $"https://localhost:44342/api/pedido/meus-pedidos/{emailCliente}"
+            );
 
             if (!response.IsSuccessStatusCode)
                 return View(new List<PedidoViewDto>());

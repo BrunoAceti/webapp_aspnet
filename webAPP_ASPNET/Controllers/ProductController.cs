@@ -4,7 +4,6 @@ using YourNamespace.Filters;
 
 namespace webAPP_ASPNET.Controllers
 {
-    [TokenAuthorize]
     public class ProductController : Controller
     {
         public IActionResult Index()

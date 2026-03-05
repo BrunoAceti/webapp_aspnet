@@ -1,4 +1,6 @@
-﻿@model List<webAPP_ASPNET.Models.CartItem>
+﻿@using System.Globalization
+
+@model List<webAPP_ASPNET.Models.CartItem>
 
 @{
     ViewData["Title"] = "Finalizar Compra";
@@ -136,7 +138,7 @@
                         {
                             <div class="d-flex justify-content-between mb-2">
                                 <span>@item.Name x @item.Quantity</span>
-                                <span>R$ @(item.Price* item.Quantity).ToString("N2")</span>
+                                <span>@((item.Price * item.Quantity).ToString("C", new CultureInfo("pt-BR")))</span>
                             </div>
                         }
 
@@ -144,7 +146,7 @@
 
                         <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
                             <span>Total</span>
-                            <span>R$ @total.ToString("N2")</span>
+                            <span>@total.ToString("C", new CultureInfo("pt-BR"))</span>
                         </div>
 
                         <button type="submit"

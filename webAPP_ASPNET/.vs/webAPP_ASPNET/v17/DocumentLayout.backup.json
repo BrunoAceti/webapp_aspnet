@@ -3,20 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\product\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\product\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\favorite\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\favorite\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|c:\\users\\user\\documents\\github\\webapp_aspnet\\webapp_aspnet\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F686F538-A358-4B3E-8E75-AEED53D1DF65}|webAPP_ASPNET.csproj|solutionrelative:views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +78,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAkwHYAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAA6wIQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-06T12:34:56.951Z",
               "IsPinned": true,
@@ -56,42 +108,200 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEoAAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Product\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Product\\Checkout.cshtml",
+              "RelativeToolTip": "Views\\Product\\Checkout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-06T16:51:08.387Z",
+              "WhenOpened": "2026-02-12T13:22:07.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAE4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-06T16:06:30.16Z",
+              "DocumentIndex": 1,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "Controllers\\PedidoController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T18:26:17.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAiwEQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T11:18:26.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Controllers\\CartController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwFwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T13:27:05.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Cart\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cart\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Cart\\Checkout.cshtml",
+              "RelativeToolTip": "Views\\Cart\\Checkout.cshtml",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAmwJAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-09T18:03:04.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T13:23:41.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T11:17:36.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T13:24:08.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FavoriteController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\FavoriteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FavoriteController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Controllers\\FavoriteController.cs",
+              "RelativeToolTip": "Controllers\\FavoriteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:04:03.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAmwJUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T11:59:40.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAIwEMAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-06T16:51:08.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Login\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Login\\Register.cshtml",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Login\\Register.cshtml",
               "RelativeToolTip": "Views\\Login\\Register.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFYAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-06T14:12:36.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T14:12:36.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T12:47:09.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Favorite\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Favorite\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Favorite\\Index.cshtml",
+              "RelativeToolTip": "Views\\Favorite\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T12:30:52.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T10:48:09.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\webapp_aspnet\\webAPP_ASPNET\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAIwIIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-09T18:07:20.83Z"
             }
           ]
         }

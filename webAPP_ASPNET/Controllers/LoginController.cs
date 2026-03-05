@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.MSIdentity.Shared;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Text;
 using webAPP_ASPNET.Models;
 
@@ -24,7 +27,11 @@ namespace webAPP_ASPNET.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string username, string password)
         {
-            var loginModel = new { Username = username, Password = password };
+            var loginModel = new
+            {
+                USERNAME = username,
+                PASSWORD = password
+            };
             var jsonContent = new StringContent(JsonConvert.SerializeObject(loginModel), Encoding.UTF8, "application/json");
             HttpContext.Session.SetString("BaseSelecionada", Data.ApiSettings.ApiBaseURL);
 
@@ -44,28 +51,44 @@ namespace webAPP_ASPNET.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-
                 var tokenObject = JsonConvert.DeserializeObject<dynamic>(responseContent);
                 string token = tokenObject?.token;
 
                 if (!string.IsNullOrEmpty(token))
                 {
-                    var cookieOptions = new CookieOptions
-                    {
-                        Expires = DateTimeOffset.Now.AddMinutes(30),
-                        HttpOnly = true,
-                        Secure = true
-                    };
-
-                    Response.Cookies.Append("AuthCookie", token, cookieOptions);
-                    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Request.Cookies["AuthCookie"]);
                     HttpContext.Session.SetString("Token", token);
 
-                    HttpResponseMessage response2 = await _httpClient.GetAsync($"User/Information/{username}/{password}");
+                    _httpClient.DefaultRequestHeaders.Authorization =
+                        new AuthenticationHeaderValue("Bearer", token);
+
+                    HttpResponseMessage response2 =
+                        await _httpClient.GetAsync($"User/Information/{username}/{password}");
+
                     if (response2.IsSuccessStatusCode)
                     {
                         var responseContent2 = await response2.Content.ReadAsStringAsync();
                         var user = JsonConvert.DeserializeObject<UserWithDepartment>(responseContent2);
+
+                        var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Name, user.User.USERNAME),
+                            new Claim(ClaimTypes.Email, user.User.EMAIL),
+                            new Claim(ClaimTypes.NameIdentifier, user.User.ID.ToString()),
+                            new Claim("FullName", user.User.FULLNAME),
+                            new Claim(ClaimTypes.Role, "ADM")
+                        };
+
+                        var identity = new ClaimsIdentity(
+                            claims,
+                            CookieAuthenticationDefaults.AuthenticationScheme);
+
+                        var principal = new ClaimsPrincipal(identity);
+
+                        await HttpContext.SignInAsync(
+                            CookieAuthenticationDefaults.AuthenticationScheme,
+                            principal
+                        );
+
                         LoggedUser.User.ID = user.User.ID;
                         LoggedUser.User.FULLNAME = user.User.FULLNAME;
                         LoggedUser.User.USERNAME = user.User.USERNAME;
@@ -83,9 +106,10 @@ namespace webAPP_ASPNET.Controllers
         }
 
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            Response.Cookies.Delete("AuthCookie");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Login");
         }
 

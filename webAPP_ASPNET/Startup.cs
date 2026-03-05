@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using webAPP_ASPNET.Data;
 using webAPP_ASPNET.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace webAPP_ASPNET
 {
@@ -22,6 +23,15 @@ namespace webAPP_ASPNET
 
             services.AddDistributedMemoryCache();
             services.AddSingleton<ITempDataProvider, SessionStateTempDataProvider>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/Login/Index";
+                options.AccessDeniedPath = "/Home/AccessDenied";
+            });
+
+            services.AddAuthorization();
 
             services.AddSession(options =>
             {
@@ -58,6 +68,7 @@ namespace webAPP_ASPNET
 
             app.UseSession();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
